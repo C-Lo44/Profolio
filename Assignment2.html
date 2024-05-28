@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+    Phantom by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Aircraft Carriers by Country</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.29.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.18.1"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.25.0"></script>
+        <style>
+            .small-image {
+                max-width: 50%;
+                height: auto;
+            }
+            .large-chart {
+                width: 50%;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <div class="inner">
+
+                    <!-- Logo -->
+                    <a href="index.html" class="logo">
+                        <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">CSI 5900 : Data Visualization</span>
+                    </a>
+
+                    <!-- Nav -->
+                    <nav>
+                        <ul>
+                            <li><a href="#menu">Menu</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </header>
+
+            <!-- Menu -->
+            <nav id="menu">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="generic.html">Ipsum veroeros</a></li>
+                    <li><a href="generic.html">Tempus etiam</a></li>
+                    <li><a href="generic.html">Consequat dolor</a></li>
+                    <li><a href="elements.html">Elements</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main -->
+            <div id="main">
+                <div class="inner">
+                    <h1>Assignment 2</h1>
+                    <p>The data represents the number of aircraft carriers by country, categorized into NATO and Non-NATO members. This visualization helps in understanding the distribution of naval power across different countries.</p>
+
+                    <!-- Original Visualization -->
+                    <h2>Original Visualization</h2>
+                    <img src="UglyAirfraftCarrierVisulization.jpeg" alt="Original Aircraft Carriers Visualization" class="small-image">
+                    <p>The original visualization was overloaded with graphical elements and text, making it visually cluttered and difficult to read. 
+                        The use of an overly detailed background image further distracted from the core data, and the layout was not optimized for comparing 
+                        quantities effectively. Additionally, the color scheme and segmentation were confusing, and the heavy use of graphics made it hard to quickly grasp the information being presented.</p>
+
+                    <!-- New Vega-Lite Visualization -->
+                    <h2>Improved Visualization with Vega-Lite</h2>
+                    <div id="vis1" class="large-chart"></div>
+                    <p>To address these issues, we created a new visualization using Vega-Lite. We simplified the layout by opting for a clean bar 
+                        chart that presents the data in a straightforward manner, making it easier to compare countries. We used distinct colors for 
+                        NATO and Non-NATO members, allowing for immediate distinction between the two categories. The size of the bar chart was significantly 
+                        increased to enhance readability, ensuring that all details are visible without straining the eyes. Tooltips were added 
+                        for interactivity, providing detailed information on hover without cluttering the chart with additional text. We improved 
+                        the text and layout for accessibility by using a clear font and appropriate font sizes for labels and titles. Lastly, we ensured
+                         consistent and clear axis labels, with the Y-axis indicating the number of aircraft carriers and the X-axis listing the countries. 
+                         By implementing these changes, the new visualization is more effective in conveying the data, making it easier for users to understand
+                          the distribution of naval power across different countries at a glance.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>
+            const spec1 = {
+                "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                "description": "Aircraft carriers by country and alliance.",
+                "width": 1200,
+                "height": 800,
+                "data": {
+                    "values": [
+                        {"country": "United States", "carriers": 11, "nato": true},
+                        {"country": "United Kingdom", "carriers": 2, "nato": true},
+                        {"country": "France", "carriers": 1, "nato": true},
+                        {"country": "Italy", "carriers": 2, "nato": true},
+                        {"country": "Spain", "carriers": 1, "nato": true},
+                        {"country": "Turkey", "carriers": 1, "nato": true},
+                        {"country": "China", "carriers": 3, "nato": false},
+                        {"country": "Japan", "carriers": 2, "nato": false},
+                        {"country": "India", "carriers": 2, "nato": false},
+                        {"country": "Russia", "carriers": 1, "nato": false},
+                        {"country": "Thailand", "carriers": 1, "nato": false}
+                    ]
+                },
+                "transform": [
+                    {"calculate": "datum.nato ? 'NATO' : 'Non-NATO'", "as": "Alliance"}
+                ],
+                "mark": "bar",
+                "encoding": {
+                    "x": {
+                        "field": "country",
+                        "type": "nominal",
+                        "sort": "-y",
+                        "title": "Country"
+                    },
+                    "y": {
+                        "field": "carriers",
+                        "type": "quantitative",
+                        "title": "Number of Aircraft Carriers"
+                    },
+                    "color": {
+                        "field": "Alliance",
+                        "type": "nominal",
+                        "scale": {
+                            "domain": ["NATO", "Non-NATO"],
+                            "range": ["#1f77b4", "#ff7f0e"]
+                        },
+                        "title": "Alliance"
+                    },
+                    "tooltip": [
+                        {"field": "country", "type": "nominal", "title": "Country"},
+                        {
+                            "field": "carriers",
+                            "type": "quantitative",
+                            "title": "Number of Aircraft Carriers"
+                        },
+                        {"field": "Alliance", "type": "nominal", "title": "Alliance"}
+                    ]
+                },
+                "config": {
+                    "axis": {"labelFontSize": 21, "titleFontSize": 21},
+                    "legend": {"labelFontSize": 21, "titleFontSize": 21},
+                    "tooltip": {"content": "data"}
+                }
+            };
+
+            vegaEmbed("#vis1", spec1, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+        </script>
+    </body>
+</html>
