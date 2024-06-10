@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Overall Driving Scores by State</title>
+    <title>Average Monthly Temperature by State Dashboard</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.29.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.18.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.25.0"></script>
     <style>
         .small-image {
             max-width: 50%;
@@ -56,38 +59,27 @@
         <!-- Main Content -->
         <div id="main">
             <div class="inner">
-                <h1>Assignment 4 - Overall Scores by State Dashboard</h1>
-                <p>This dashboard presents visualizations that provide insights into the overall scores across various states in the United States. The overall score is calculated based on several key factors, including:</p>
-                    <ul>
-                        <li>Fatal crash rate per 100K drivers</li>
-                        <li>Fatal crash rate involving a drunk driver per 100K drivers</li>
-                        <li>Fatal crash rate involving a drowsy driver per 100K drivers</li>
-                        <li>DUI arrests per 100K drivers</li>
-                        <li>Percentage of uninsured drivers</li>
-                    </ul>
-                <p>These metrics are combined to generate a comprehensive safety score, reflecting the overall driver safety in each state.</p>
+                <h1>Assignment 3 - Average Monthly Temperature by State Dashboard</h1>
+                <p>This dashboard presents two visualizations that provide insights into the average monthly temperatures across various states in the United States.</p>
 
-                <h2>Top 10 Worst Driving States</h2>
-                <p>This bar chart compares the overall satisfaction scores of different states, highlighting the top 10 states with the worst driving scores.</p>
-                <p><strong>Approach:</strong> To create this visualization, I used Tableau to aggregate the comprehensive satisfaction scores for each state. The data was then represented in a horizontal bar chart format to facilitate easy comparison. The bars were color-coded to enhance visual distinction between the states, and the x-axis was formatted to display the scores as decimals for precision.</p>
+                <h2>1. Map-Based Visualization</h2>
+                <p>The map-based visualization displays the average monthly temperatures for each state, with colors representing different temperature ranges. This geographic representation helps users quickly identify regional temperature patterns and anomalies. The map allows for an intuitive understanding of how temperatures vary across different parts of the country, which is especially useful for spotting geographical trends and regional climate differences.</p>
 
-                <h2>Top 10 Worst Driving States (Misleading)</h2>
-                <p>This bar chart also compares the average overall satisfaction scores of different states, but it has been intentionally manipulated to mislead the viewer by truncating the x-axis.</p>
-                <p><strong>Approach:</strong> In this visualization, the x-axis is truncated, starting from 0.60 instead of 0. This exaggerates the differences between the states, making the variations in scores appear more significant than they actually are. This technique can mislead viewers into thinking there are larger discrepancies in the data than truly exist.</p>
-                <p><strong>Why this is bad:</strong> Misleading visualizations like this can distort the audience's perception of the data. By exaggerating differences, they can create a false sense of urgency or severity that does not accurately reflect reality. This can lead to incorrect conclusions, misinformed decisions, and a loss of trust in the data presented. Ensuring accurate and honest representation of data is crucial for maintaining integrity and reliability in data-driven storytelling.</p>
+                <h2>2. Temperature Trend Over Time (Line Chart)</h2>
+                <p>The line chart shows the trend of average monthly temperatures over the years for each state. This visualization allows users to track temperature changes over time, providing insights into long-term climate trends and potential patterns of warming or cooling. By including geographic information (states) as a color dimension, the chart makes it easy to compare temperature trends between different states.</p>
 
-                <div class='tableauPlaceholder' id='viz1718041254431' style='position: relative'>
+                <div class='tableauPlaceholder' id='viz1717379288838' style='position: relative'>
                     <noscript>
-                        <a href='#'><img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/As/Assignment4_17180411696250/Dashboard1/1_rss.png' style='border: none' /></a>
+                        <a href='#'><img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/Av/AverageMonthlyTemperatureByState/Dashboard1/1_rss.png' style='border: none' /></a>
                     </noscript>
                     <object class='tableauViz' style='display:none;'>
                         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                         <param name='embed_code_version' value='3' />
                         <param name='site_root' value='' />
-                        <param name='name' value='Assignment4_17180411696250/Dashboard1' />
+                        <param name='name' value='AverageMonthlyTemperatureByState/Dashboard1' />
                         <param name='tabs' value='no' />
                         <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https://public.tableau.com/static/images/As/Assignment4_17180411696250/Dashboard1/1.png' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/Av/AverageMonthlyTemperatureByState/Dashboard1/1.png' />
                         <param name='animate_transition' value='yes' />
                         <param name='display_static_image' value='yes' />
                         <param name='display_spinner' value='yes' />
@@ -97,24 +89,18 @@
                     </object>
                 </div>
                 <script type='text/javascript'>
-                    var divElement = document.getElementById('viz1718041254431');
+                    var divElement = document.getElementById('viz1717379288838');
                     var vizElement = divElement.getElementsByTagName('object')[0];
                     if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
                     else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
-                    else { vizElement.style.width='100%';vizElement.style.height='727px';}
+                    else { vizElement.style.width='100%';vizElement.style.height='777px';}
                     var scriptElement = document.createElement('script');
                     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);
                 </script>
-
-                <h2><!--Ranking States With The Overall Worst Drivers - a--> Not Needed But I Wanted To Include Incase Anyone Was Curious Of The Other States Rankings</h2>
-                <p>This visualization ranks states based on their overall worst drivers, providing a geographical representation of the data. It allows for an intuitive understanding of how different states compare in terms of driving safety and satisfaction.</p>
-                <p><strong>Approach:</strong> This visualization was created using Tableau, where I mapped the states and applied color gradients to represent the severity of driving issues. The geographic representation helps in identifying regional patterns and understanding the spatial distribution of driving scores.</p>
-
-                
-
-                
-         
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
