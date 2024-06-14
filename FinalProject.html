@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Overall Driving Scores by State</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        .small-image {
+            max-width: 50%;
+            height: auto;
+        }
+        .large-chart {
+            width: 50%;
+            height: 50px;
+        }
+        ul.custom-list {
+            list-style-type: square; /* Change this to the symbol you prefer */
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">CSI 5900: Data Visualization</span>
+                </a>
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="generic.html">Assignment 1</a></li>
+                <li><a href="Assignment2.html">Assignment 2</a></li>
+                <li><a href="Assignment3.html">Assignment 3</a></li>
+                <li><a href="Assignment4.html">Assignment 4</a></li>
+                <li><a href="">Assignment 5 (Not In Development Yet)</a></li>
+                <li><a href="FinalProject.html">Final Project (In Development)</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main">
+            <div class="inner">
+                <h1>Final Project - Spotlight on America: Identifying Optimal and Challenging Locations</h1>
+                <p>This dashboard presents visualizations that provide insights into the overall scores across various states in the United States. The overall score is calculated based on several key factors, including:</p>
+                <ul class="custom-list">
+                    <li><strong>Population Data on Cities:</strong>
+                        <ul>
+                            <li><strong>Economic Opportunities:</strong> Higher populations often correlate with more job opportunities and economic activities.</li>
+                            <li><strong>Infrastructure and Services:</strong> Larger cities typically have better infrastructure and access to services like healthcare, education, and public transportation.</li>
+                            <li><strong>Social Dynamics:</strong> Understanding the population size helps in assessing community diversity and social opportunities.</li>
+                        </ul>
+                        <div class='tableauPlaceholder' id='viz1718152907627' style='position: relative'>
+                            <noscript>
+                                <a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;FinalProject-PopulationCitiesUS&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a>
+                            </noscript>
+                            <object class='tableauViz' style='display:none;'>
+                                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                <param name='embed_code_version' value='3' />
+                                <param name='site_root' value='' />
+                                <param name='name' value='FinalProject-PopulationCitiesUS&#47;Dashboard1' />
+                                <param name='tabs' value='no' />
+                                <param name='toolbar' value='yes' />
+                                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;FinalProject-PopulationCitiesUS&#47;Dashboard1&#47;1.png' />
+                                <param name='animate_transition' value='yes' />
+                                <param name='display_static_image' value='yes' />
+                                <param name='display_spinner' value='yes' />
+                                <param name='display_overlay' value='yes' />
+                                <param name='display_count' value='yes' />
+                                <param name='language' value='en-US' />
+                            </object>
+                        </div>
+                        <script type='text/javascript'>
+                            var divElement = document.getElementById('viz1718152907627');
+                            var vizElement = divElement.getElementsByTagName('object')[0];
+                            if (divElement.offsetWidth > 800) { 
+                                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                            } else if (divElement.offsetWidth > 500) { 
+                                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                            } else { 
+                                vizElement.style.width='100%';vizElement.style.height='727px';
+                            }
+                            var scriptElement = document.createElement('script');
+                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                        </script>
+                    </li>
+                    <li><strong>Average Temp per State:</strong>
+                        <ul>
+                            <li><strong>Regional Climate Variations:</strong> The map highlights the differences in average temperatures across states, which can influence regional climate characteristics and seasonal weather patterns.</li>
+                            <li><strong>Temperature Trends Over Time:</strong> The line graph shows historical temperature trends, providing insights into how average temperatures have changed over the decades and indicating potential climate change effects.</li>
+                            <li><strong>Impact on Local Environments:</strong> Understanding these temperature trends is crucial for anticipating impacts on local ecosystems, wildlife, and vegetation, helping to inform conservation efforts and environmental planning.</li>
+                        </ul>
+                        <div class='tableauPlaceholder' id='viz1718319874174' style='position: relative'>
+                            <noscript>
+                                <a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Av&#47;AverageTermperatureByState&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a>
+                            </noscript>
+                            <object class='tableauViz' style='display:none;'>
+                                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                <param name='embed_code_version' value='3' />
+                                <param name='site_root' value='' />
+                                <param name='name' value='AverageTermperatureByState&#47;Dashboard1' />
+                                <param name='tabs' value='no' />
+                                <param name='toolbar' value='yes' />
+                                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Av&#47;AverageTermperatureByState&#47;Dashboard1&#47;1.png' />
+                                <param name='animate_transition' value='yes' />
+                                <param name='display_static_image' value='yes' />
+                                <param name='display_spinner' value='yes' />
+                                <param name='display_overlay' value='yes' />
+                                <param name='display_count' value='yes' />
+                                <param name='language' value='en-US' />
+                            </object>
+                        </div>
+                        <script type='text/javascript'>
+                            var divElement = document.getElementById('viz1718319874174');
+                            var vizElement = divElement.getElementsByTagName('object')[0];
+                             if (divElement.offsetWidth > 800) { 
+                                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                            } else if (divElement.offsetWidth > 500) { 
+                                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                            } else { 
+                                vizElement.style.width='100%';vizElement.style.height='727px';
+                            }
+                            var scriptElement = document.createElement('script');
+                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                        </script>
+                    </li>
+                    <li><strong>Crime Rate per Cities:</strong>
+                        <ul>
+                            <li><strong>Safety and Security:</strong> Crime rates directly impact the safety and security of residents, influencing where people choose to live.</li>
+                            <li><strong>Property Values:</strong> High crime rates can decrease property values, while lower crime rates can make areas more attractive for investment.</li>
+                            <li><strong>Community Well-being:</strong> Low crime rates contribute to a sense of community well-being and quality of life.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Descending and Ascending Population Growth:</strong>
+                        <ul>
+                            <li><strong>Economic Trends:</strong> Population growth trends indicate economic vitality or decline, helping to identify emerging or struggling regions.</li>
+                            <li><strong>Urban Planning:</strong> Insights into population changes aid in urban planning and the allocation of resources for sustainable development.</li>
+                            <li><strong>Real Estate Market:</strong> Population growth influences housing demand and real estate market trends, guiding investment decisions.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cost of Living:</strong>
+                        <ul>
+                            <li><strong>Affordability:</strong> Understanding the cost of living is crucial for assessing the affordability of a location, impacting financial planning for individuals and families.</li>
+                            <li><strong>Comparison of Regions:</strong> Cost of living data allows for comparisons between different regions, helping people make informed decisions about relocation.</li>
+                            <li><strong>Economic Viability:</strong> It provides insights into the economic viability of an area, influencing business investments and personal financial stability.</li>
+                        </ul>
+                    </li>
+                </ul>
+               
+
+                
+                
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
