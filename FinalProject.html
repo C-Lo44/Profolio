@@ -15,9 +15,6 @@
             width: 50%;
             height: 50px;
         }
-        ul.custom-list {
-            list-style-type: square; /* Change this to the symbol you prefer */
-        }
     </style>
 </head>
 <body class="is-preload">
@@ -60,121 +57,65 @@
         <!-- Main Content -->
         <div id="main">
             <div class="inner">
-                <h1>Final Project - Spotlight on America: Identifying Optimal and Challenging Locations</h1>
+                <h1>Assignment 4 - Overall Scores by State Dashboard</h1>
                 <p>This dashboard presents visualizations that provide insights into the overall scores across various states in the United States. The overall score is calculated based on several key factors, including:</p>
-                <ul class="custom-list">
-                    <li><strong>Population Data on Cities:</strong>
-                        <ul>
-                            <li><strong>Economic Opportunities:</strong> Higher populations often correlate with more job opportunities and economic activities.</li>
-                            <li><strong>Infrastructure and Services:</strong> Larger cities typically have better infrastructure and access to services like healthcare, education, and public transportation.</li>
-                            <li><strong>Social Dynamics:</strong> Understanding the population size helps in assessing community diversity and social opportunities.</li>
-                        </ul>
-                        <div class='tableauPlaceholder' id='viz1718152907627' style='position: relative'>
-                            <noscript>
-                                <a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;FinalProject-PopulationCitiesUS&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a>
-                            </noscript>
-                            <object class='tableauViz' style='display:none;'>
-                                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                                <param name='embed_code_version' value='3' />
-                                <param name='site_root' value='' />
-                                <param name='name' value='FinalProject-PopulationCitiesUS&#47;Dashboard1' />
-                                <param name='tabs' value='no' />
-                                <param name='toolbar' value='yes' />
-                                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;FinalProject-PopulationCitiesUS&#47;Dashboard1&#47;1.png' />
-                                <param name='animate_transition' value='yes' />
-                                <param name='display_static_image' value='yes' />
-                                <param name='display_spinner' value='yes' />
-                                <param name='display_overlay' value='yes' />
-                                <param name='display_count' value='yes' />
-                                <param name='language' value='en-US' />
-                            </object>
-                        </div>
-                        <script type='text/javascript'>
-                            var divElement = document.getElementById('viz1718152907627');
-                            var vizElement = divElement.getElementsByTagName('object')[0];
-                            if (divElement.offsetWidth > 800) { 
-                                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-                            } else if (divElement.offsetWidth > 500) { 
-                                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-                            } else { 
-                                vizElement.style.width='100%';vizElement.style.height='727px';
-                            }
-                            var scriptElement = document.createElement('script');
-                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                        </script>
-                    </li>
-                    <li><strong>Average Temp per State:</strong>
-                        <ul>
-                            <li><strong>Regional Climate Variations:</strong> The map highlights the differences in average temperatures across states, which can influence regional climate characteristics and seasonal weather patterns.</li>
-                            <li><strong>Temperature Trends Over Time:</strong> The line graph shows historical temperature trends, providing insights into how average temperatures have changed over the decades and indicating potential climate change effects.</li>
-                            <li><strong>Impact on Local Environments:</strong> Understanding these temperature trends is crucial for anticipating impacts on local ecosystems, wildlife, and vegetation, helping to inform conservation efforts and environmental planning.</li>
-                        </ul>
-                        <div class='tableauPlaceholder' id='viz1718319874174' style='position: relative'>
-                            <noscript>
-                                <a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Av&#47;AverageTermperatureByState&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a>
-                            </noscript>
-                            <object class='tableauViz' style='display:none;'>
-                                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                                <param name='embed_code_version' value='3' />
-                                <param name='site_root' value='' />
-                                <param name='name' value='AverageTermperatureByState&#47;Dashboard1' />
-                                <param name='tabs' value='no' />
-                                <param name='toolbar' value='yes' />
-                                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Av&#47;AverageTermperatureByState&#47;Dashboard1&#47;1.png' />
-                                <param name='animate_transition' value='yes' />
-                                <param name='display_static_image' value='yes' />
-                                <param name='display_spinner' value='yes' />
-                                <param name='display_overlay' value='yes' />
-                                <param name='display_count' value='yes' />
-                                <param name='language' value='en-US' />
-                            </object>
-                        </div>
-                        <script type='text/javascript'>
-                            var divElement = document.getElementById('viz1718319874174');
-                            var vizElement = divElement.getElementsByTagName('object')[0];
-                             if (divElement.offsetWidth > 800) { 
-                                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-                            } else if (divElement.offsetWidth > 500) { 
-                                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-                            } else { 
-                                vizElement.style.width='100%';vizElement.style.height='727px';
-                            }
-                            var scriptElement = document.createElement('script');
-                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                        </script>
-                    </li>
-                    <li><strong>Crime Rate per Cities:</strong>
-                        <ul>
-                            <li><strong>Safety and Security:</strong> Crime rates directly impact the safety and security of residents, influencing where people choose to live.</li>
-                            <li><strong>Property Values:</strong> High crime rates can decrease property values, while lower crime rates can make areas more attractive for investment.</li>
-                            <li><strong>Community Well-being:</strong> Low crime rates contribute to a sense of community well-being and quality of life.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Descending and Ascending Population Growth:</strong>
-                        <ul>
-                            <li><strong>Economic Trends:</strong> Population growth trends indicate economic vitality or decline, helping to identify emerging or struggling regions.</li>
-                            <li><strong>Urban Planning:</strong> Insights into population changes aid in urban planning and the allocation of resources for sustainable development.</li>
-                            <li><strong>Real Estate Market:</strong> Population growth influences housing demand and real estate market trends, guiding investment decisions.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Cost of Living:</strong>
-                        <ul>
-                            <li><strong>Affordability:</strong> Understanding the cost of living is crucial for assessing the affordability of a location, impacting financial planning for individuals and families.</li>
-                            <li><strong>Comparison of Regions:</strong> Cost of living data allows for comparisons between different regions, helping people make informed decisions about relocation.</li>
-                            <li><strong>Economic Viability:</strong> It provides insights into the economic viability of an area, influencing business investments and personal financial stability.</li>
-                        </ul>
-                    </li>
-                </ul>
-               
+                    <ul>
+                        <li>Fatal crash rate per 100K drivers</li>
+                        <li>Fatal crash rate involving a drunk driver per 100K drivers</li>
+                        <li>Fatal crash rate involving a drowsy driver per 100K drivers</li>
+                        <li>DUI arrests per 100K drivers</li>
+                        <li>Percentage of uninsured drivers</li>
+                    </ul>
+                <p>These metrics are combined to generate a comprehensive safety score, reflecting the overall driver safety in each state.</p>
+
+                <h2>Top 10 Worst Driving States</h2>
+                <p>This bar chart compares the overall satisfaction scores of different states, highlighting the top 10 states with the worst driving scores.</p>
+                <p><strong>Approach:</strong> To create this visualization, I used Tableau to aggregate the comprehensive satisfaction scores for each state. The data was then represented in a horizontal bar chart format to facilitate easy comparison. The bars were color-coded to enhance visual distinction between the states, and the x-axis was formatted to display the scores as decimals for precision.</p>
+
+                <h2>Top 10 Worst Driving States (Misleading)</h2>
+                <p>This bar chart also compares the average overall satisfaction scores of different states, but it has been intentionally manipulated to mislead the viewer by truncating the x-axis.</p>
+                <p><strong>Approach:</strong> In this visualization, the x-axis is truncated, starting from 0.60 instead of 0. This exaggerates the differences between the states, making the variations in scores appear more significant than they actually are. This technique can mislead viewers into thinking there are larger discrepancies in the data than truly exist.</p>
+                <p><strong>Why this is bad:</strong> Misleading visualizations like this can distort the audience's perception of the data. By exaggerating differences, they can create a false sense of urgency or severity that does not accurately reflect reality. This can lead to incorrect conclusions, misinformed decisions, and a loss of trust in the data presented. Ensuring accurate and honest representation of data is crucial for maintaining integrity and reliability in data-driven storytelling.</p>
+
+                <div class='tableauPlaceholder' id='viz1718041254431' style='position: relative'>
+                    <noscript>
+                        <a href='#'><img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/As/Assignment4_17180411696250/Dashboard1/1_rss.png' style='border: none' /></a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='Assignment4_17180411696250/Dashboard1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https://public.tableau.com/static/images/As/Assignment4_17180411696250/Dashboard1/1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                    </object>
+                </div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1718041254431');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
+                    else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
+                    else { vizElement.style.width='100%';vizElement.style.height='727px';}
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+
+                <h2><!--Ranking States With The Overall Worst Drivers - a--> Not Needed But I Wanted To Include Incase Anyone Was Curious Of The Other States Rankings</h2>
+                <p>This visualization ranks states based on their overall worst drivers, providing a geographical representation of the data. It allows for an intuitive understanding of how different states compare in terms of driving safety and satisfaction.</p>
+                <p><strong>Approach:</strong> This visualization was created using Tableau, where I mapped the states and applied color gradients to represent the severity of driving issues. The geographic representation helps in identifying regional patterns and understanding the spatial distribution of driving scores.</p>
 
                 
-                
-            </div>
-        </div>
 
-    </div>
+                
+         
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
