@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Monthly Temperature by State Dashboard</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+   
+    <style>
+        .small-image {
+            max-width: 50%;
+            height: auto;
+        }
+        .large-chart {
+            width: 50%;
+            height: 50px;
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">CSI 5900: Data Visualization</span>
+                </a>
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="generic.html">Assignment 1</a></li>
+                <li><a href="Assignment2.html">Assignment 2</a></li>
+                <li><a href="Assignment3.html">Assignment 3</a></li>
+                <li><a href="Assignment4.html">Assignment 4</a></li>
+                <li><a href="Assignment5.html">Assignment 5</a></li>
+                <li><a href="FinalProject.html">Final Project (In Development)</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main">
+            <div class="inner">
+                <h1>Assignment 5 - Step-by-Step Guide to Plotting An Animation Chart Race</h1>
+                <h2>Step 1: Download Dataset</h2>
+                <p><a href="https://colab.google/" >Click Link To Open Google Colab</a></p>
+
+                <h2>Step 2: Download Dataset</h2>
+                <p>Use the dataset from the provided link:</p>
+                <p>Upload the csv file into Google Colab files and you can hover over the file and right click to copy the path if the path is different from mine </p>
+                <p><a href="assets/average_monthly_temperature_by_state_1950-2022.csv" download="average_monthly_temperature_by_state_1950-2022.csv">Download CSV Dataset</a></p>
+                
+                <h2>Step 3: Install Required Libraries</h2>
+                <pre><code>!pip install plotly</code></pre>
+                
+                <h2>Step 4: Import Necessary Libraries</h2>
+                <pre><code>import plotly
+import pandas as pd
+import plotly.express as px</code></pre>
+                
+                <h2>Step 5: Load the Dataset</h2>
+                <pre><code>ReadMe = pd.read_csv('/content/average_monthly_temperature_by_state_1950-2022.csv')
+ReadMe = ReadMe.sort_values('year', ascending=True)
+print(ReadMe)</code></pre>
+                
+                <h2>Step 6: Calculate Yearly Average Temperature for Each State</h2>
+                <pre><code>yearly_avg_temp = ReadMe.groupby(['year', 'state'])['average_temp'].mean().reset_index()
+yearly_avg_temp = yearly_avg_temp.sort_values(by=['year', 'average_temp'], ascending=[True, False])</code></pre>
+                
+                <h2>Step 7: Create a Bar Plot</h2>
+                <pre><code>fig = px.bar(
+    yearly_avg_temp,
+    x='average_temp',
+    y='state',
+    animation_frame='year',
+    animation_group='state',
+    color='average_temp',
+    hover_name='state',
+    orientation='h',
+    range_x=[yearly_avg_temp['average_temp'].min(), yearly_avg_temp['average_temp'].max()]
+)
+
+fig.update_layout(
+    height=1200,
+    paper_bgcolor='black',
+    plot_bgcolor='black',
+    font_color='white',
+    yaxis=dict(
+        tickfont=dict(color='white'),
+        automargin=True,
+        categoryorder='total ascending'
+    ),
+    xaxis=dict(
+        tickfont=dict(color='white'),
+        title='Average Temperature'
+    ),
+    title='Average Temperature of US States Over Time',
+    title_font=dict(size=24),
+    margin=dict(l=20, r=20, t=40, b=20),
+    updatemenus=[{
+        'buttons': [
+        {
+            'args': [None, {'frame': {'duration': 2200, 'redraw': True}, 'fromcurrent': True, 'transition': {'duration': 2200}}], #Change duration based on your preference
+            'label': 'Play',
+            'method': 'animate'
+        },
+        {
+            'args': [[None], {'frame': {'duration': 0, 'redraw': True}, 'mode': 'immediate', 'transition': {'duration': 0}}],
+            'label': 'Pause',
+            'method': 'animate'
+        }
+    ],
+        'direction': 'left',
+        'pad': {'r': 10, 't': 87},
+        'showactive': False,
+        'type': 'buttons',
+        'x': 0.1,
+        'xanchor': 'right',
+        'y': 0,
+        'yanchor': 'top'
+    }]
+)
+
+fig.show()</code></pre>
+                
+                <h2>Final Visualization</h2>
+                <p>This is an interactive bar plot showing the average temperatures of US states over time.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
