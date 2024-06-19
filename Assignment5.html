@@ -61,52 +61,62 @@
                 <h1>Assignment 5 - Step-by-Step Guide to Creating An Animated Bar Chart Race</h1>
                 <h2>Step 1: Open Google Colab</h2>
                 <p>↓ Click the link below and then click New Notebook in the middle of the page ↓</p>
-                <p><a target='_blank' href="https://colab.google/" >Click This Link To Open Google Colab</a></p>
+                <p><a target='_blank' href="https://colab.google/">Click This Link To Open Google Colab</a></p>
+                <img src="Step1ScreenShot.png" alt="Google Colab Homepage" width="850" height="600">
 
-                <h2>Step 2: Download Dataset</h2>
-                <p>Use the dataset from the provided link:</p>
-                <p>Upload the csv file into Google Colab files and you can hover over the file and right click to copy the path if the path is different from mine </p>
-                <p><a href="average_monthly_temperature_by_state_1950-2022.csv" download="average_monthly_temperature_by_state_1950-2022.csv">Download CSV Dataset</a></p>
-                
-                <h2>Step 3: Install Required Libraries</h2>
+                <h2>Step 2: Install Required Libraries</h2>
+                <p>You most likely will have the same description since we have worked in plotly before.</p>
                 <pre><code>!pip install plotly</code></pre>
+                <img src="Step2ScreenShot.png"  width="1050" height="300">
                 
-                <h2>Step 4: Import Necessary Libraries</h2>
+                <h2>Step 3: Import Necessary Libraries</h2>
                 <pre><code>import plotly
 import pandas as pd
 import plotly.express as px</code></pre>
-                
-                <h2>Step 5: Load the Dataset</h2>
-                <pre><code>ReadMe = pd.read_csv('/content/average_monthly_temperature_by_state_1950-2022.csv')
+
+                <h2>Step 4: Download and Load the Dataset</h2>
+                <p>Use the dataset from the provided link:</p>
+                <p>Upload the csv file into Google Colab files and you can hover over the file and right click to copy the path if the path is different from mine.</p>
+                <p><a href="average_monthly_temperature_by_state_1950-2022.csv" download="average_monthly_temperature_by_state_1950-2022.csv">Download CSV Dataset</a></p>
+                <img src="Step3ScreenShot.png"  width="1050" height="250">
+                <pre><code># Import your own or use my dataset
+ReadMe = pd.read_csv('/content/average_monthly_temperature_by_state_1950-2022.csv')
 ReadMe = ReadMe.sort_values('year', ascending=True)
 print(ReadMe)</code></pre>
-                
-                <h2>Step 6: Calculate Yearly Average Temperature for Each State</h2>
-                <pre><code>yearly_avg_temp = ReadMe.groupby(['year', 'state'])['average_temp'].mean().reset_index()
-yearly_avg_temp = yearly_avg_temp.sort_values(by=['year', 'average_temp'], ascending=[True, False])</code></pre>
-                
-                <h2>Step 7: Create a Bar Plot</h2>
-                <pre><code>fig = px.bar(
-    yearly_avg_temp,
-    x='average_temp',
-    y='state',
-    animation_frame='year',
-    animation_group='state',
-    color='average_temp',
-    hover_name='state',
-    orientation='h',
-    range_x=[yearly_avg_temp['average_temp'].min(), yearly_avg_temp['average_temp'].max()]
-)
+                <img src="Step5ScreenShot.png"  width="1050" height="550">
 
+                <h2>Step 5: Calculate Yearly Average Temperature for Each State</h2>
+                <pre><code># Calculate the yearly average temperature for each state
+yearly_avg_temp = ReadMe.groupby(['year', 'state'])['average_temp'].mean().reset_index()
+                    
+# Sort the DataFrame for each year
+yearly_avg_temp = yearly_avg_temp.sort_values(by=['year', 'average_temp'], ascending=[True, False])
+                    </code></pre>
+                
+                <h2>Step 6: Create a Bar Plot</h2>
+                <pre><code># Create the bar plot with updated parameters
+fig = px.bar(
+yearly_avg_temp,
+x='average_temp',
+y='state',
+animation_frame='year',
+animation_group='state',
+color='average_temp',
+hover_name='state',
+orientation='h',  # Horizontal bar plot
+range_x=[yearly_avg_temp['average_temp'].min(), yearly_avg_temp['average_temp'].max()]
+)
+                    
+# Customize layout
 fig.update_layout(
-    height=1200,
+    height=1200,  # Adjust the height to fit all 50 states
     paper_bgcolor='black',
     plot_bgcolor='black',
     font_color='white',
     yaxis=dict(
         tickfont=dict(color='white'),
-        automargin=True,
-        categoryorder='total ascending'
+        automargin=True,  # Ensure there is enough margin
+        categoryorder='total ascending'  # Ensure ascending order by temperature
     ),
     xaxis=dict(
         tickfont=dict(color='white'),
@@ -117,17 +127,17 @@ fig.update_layout(
     margin=dict(l=20, r=20, t=40, b=20),
     updatemenus=[{
         'buttons': [
-        {
-            'args': [None, {'frame': {'duration': 2200, 'redraw': True}, 'fromcurrent': True, 'transition': {'duration': 2200}}], #Change duration based on your preference
-            'label': 'Play',
-            'method': 'animate'
-        },
-        {
-            'args': [[None], {'frame': {'duration': 0, 'redraw': True}, 'mode': 'immediate', 'transition': {'duration': 0}}],
-            'label': 'Pause',
-            'method': 'animate'
-        }
-    ],
+            {
+                'args': [None, {'frame': {'duration': 2200, 'redraw': True}, 'fromcurrent': True, 'transition': {'duration': 2200}}], #Change duration based on your preference
+                'label': 'Play',
+                'method': 'animate'
+            },
+            {
+                'args': [[None], {'frame': {'duration': 0, 'redraw': True}, 'mode': 'immediate', 'transition': {'duration': 0}}],
+                'label': 'Pause',
+                'method': 'animate'
+            }
+        ],
         'direction': 'left',
         'pad': {'r': 10, 't': 87},
         'showactive': False,
@@ -139,10 +149,11 @@ fig.update_layout(
     }]
 )
 
+# Show the plot
 fig.show()</code></pre>
                 
                 <h2>Final Visualization</h2>
-                <p>Should look like this when you run it</p>
+                <p>Should look like this when you run it. Now you have some understanding on how to create an animated bar chart race. Now you can experiment with other datasets and try it out! Enjoy! :D</p>
                 <img src="AnimationStateChartPic.png" alt="" width="1050" height="600"/>
                
             </div>
