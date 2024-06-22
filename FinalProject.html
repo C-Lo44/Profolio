@@ -12,11 +12,14 @@
             height: auto;
         }
         .large-chart {
-            width: 50%;
-            height: 50px;
+            width: 100%;
+            height: 600px; /* Adjust as needed */
         }
         ul.custom-list {
             list-style-type: square; /* Change this to the symbol you prefer */
+        }
+        .content-section {
+            margin-bottom: 50px; /* Add space between sections */
         }
     </style>
 </head>
@@ -52,7 +55,7 @@
                 <li><a href="Assignment2.html">Assignment 2</a></li>
                 <li><a href="Assignment3.html">Assignment 3</a></li>
                 <li><a href="Assignment4.html">Assignment 4</a></li>
-               <li><a href="Assignment5.html">Assignment 5</a></li>
+                <li><a href="Assignment5.html">Assignment 5</a></li>
                 <li><a href="FinalProject.html">Final Project (In Development)</a></li>
             </ul>
         </nav>
@@ -194,12 +197,40 @@
                             vizElement.parentNode.insertBefore(scriptElement, vizElement);
                         </script>
                     </li>
-                    <li><strong>Cost of Living:</strong>
+                    <li><strong>Cost of Housing:</strong>
                         <ul>
-                            <li><strong>Affordability:</strong> Understanding the cost of living is crucial for assessing the affordability of a location, impacting financial planning for individuals and families.</li>
-                            <li><strong>Comparison of Regions:</strong> Cost of living data allows for comparisons between different regions, helping people make informed decisions about relocation.</li>
+                            <li><strong>Affordability:</strong> Understanding housing costs is crucial for assessing the affordability of a location, impacting financial planning for individuals and families.</li>
+                            <li><strong>Comparison of Regions:</strong> Housing cost data allows for comparisons between different regions, helping people make informed decisions about relocation.</li>
                             <li><strong>Economic Viability:</strong> It provides insights into the economic viability of an area, influencing business investments and personal financial stability.</li>
-                        </ul>
+                             <!-- <li><strong>Housing Prices Correlation:</strong> By analyzing housing prices and their correlation with other factors in the provided CSV file, we can gain a deeper understanding of the housing market and its impact on different regions. This analysis helps in identifying trends, making data-driven decisions, and providing a comprehensive view of economic conditions.</li> -->
+                        </ul>                                      
+                        <div class='tableauPlaceholder' id='viz1719087742611' style='position: relative'>
+                            <noscript>
+                                <a href='#'><img alt='Story 1 ' src='https://public.tableau.com/static/images/F4/F4GWGSTP5/1_rss.png' style='border: none' /></a>
+                            </noscript>
+                            <object class='tableauViz' style='display:none;'>
+                                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                                <param name='embed_code_version' value='3' /> 
+                                <param name='path' value='shared/F4GWGSTP5' /> 
+                                <param name='toolbar' value='yes' />
+                                <param name='static_image' value='https://public.tableau.com/static/images/F4/F4GWGSTP5/1.png' /> 
+                                <param name='animate_transition' value='yes' />
+                                <param name='display_static_image' value='yes' />
+                                <param name='display_spinner' value='yes' />
+                                <param name='display_overlay' value='yes' />
+                                <param name='display_count' value='yes' />
+                                <param name='language' value='en-US' />
+                            </object>
+                        </div>
+                        <script type='text/javascript'>
+                            var divElement = document.getElementById('viz1719087742611');
+                            var vizElement = divElement.getElementsByTagName('object')[0];
+                            vizElement.style.width = '100%';
+                            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                            var scriptElement = document.createElement('script');
+                            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                        </script>
                     </li>
                 </ul>
                
